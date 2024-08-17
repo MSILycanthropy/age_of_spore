@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2ox8nbqsb536"]
+
+[ext_resource type="Texture2D" uid="uid://catxby1w7qnq5" path="res://sprites/currency.png" id="1_6dkuk"]
+[ext_resource type="Texture2D" uid="uid://c1yotjphrie2q" path="res://sprites/cell-stage-icon.png" id="2_rmm68"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Currency" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 110.0
+offset_bottom = 60.0
+
+[node name="CurrencyIcon" type="TextureRect" parent="Currency"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_6dkuk")
+
+[node name="CurrencyLabel" type="Label" parent="Currency"]
+layout_mode = 2
+text = ": 1000"
+
+[node name="Stages" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_right = 688.0
+offset_bottom = 60.0
+
+[node name="CellButton" type="Button" parent="Stages"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="CellIcon" type="TextureRect" parent="Stages/CellButton"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_rmm68")
+stretch_mode = 4
+
+[node name="HumanButton" type="Button" parent="Stages"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="HumanIcon" type="TextureRect" parent="Stages/HumanButton"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_rmm68")
+
+[node name="PlanetButton" type="Button" parent="Stages"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="PlanetIcon" type="TextureRect" parent="Stages/PlanetButton"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_rmm68")
+
+[node name="MenuButton" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 1090.0
+offset_right = 1150.0
+offset_bottom = 60.0
+
+[node name="OptionsIcon" type="TextureRect" parent="MenuButton"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("1_6dkuk")
