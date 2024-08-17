@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://qu1b5c5cm0bl"]
+[gd_scene load_steps=6 format=3 uid="uid://qu1b5c5cm0bl"]
 
 [ext_resource type="Texture2D" uid="uid://b3yxv5uffusly" path="res://icon.svg" id="1_lchni"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_m85jm"]
+[ext_resource type="Texture2D" uid="uid://catxby1w7qnq5" path="res://sprites/currency.png" id="3_q6rq1"]
+[ext_resource type="Texture2D" uid="uid://c1yotjphrie2q" path="res://sprites/cell-stage-icon.png" id="4_a4r81"]
+[ext_resource type="Texture2D" uid="uid://blyvp6xlq7ky6" path="res://sprites/player-cell.png" id="4_pfkrv"]
 
 [node name="Base" type="Node2D" node_paths=PackedStringArray("cell_stage", "human_stage", "space_stage")]
 script = ExtResource("1_m85jm")
@@ -15,14 +18,208 @@ space_stage = NodePath("SpaceStage")
 position = Vector2(451, 308)
 texture = ExtResource("1_lchni")
 
+[node name="CellStageUI" type="Control" parent="CellStage"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="UnitQueue" type="HBoxContainer" parent="CellStage/CellStageUI"]
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 0
+offset_top = 75.0
+offset_right = 284.0
+offset_bottom = 156.0
+
+[node name="NextUnit" type="PanelContainer" parent="CellStage/CellStageUI/UnitQueue"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="NextUnitIcon" type="TextureRect" parent="CellStage/CellStageUI/UnitQueue/NextUnit"]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture = ExtResource("4_pfkrv")
+stretch_mode = 4
+
+[node name="UnitsInformation" type="VBoxContainer" parent="CellStage/CellStageUI/UnitQueue"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+
+[node name="QueuedUnits" type="HBoxContainer" parent="CellStage/CellStageUI/UnitQueue/UnitsInformation"]
+layout_mode = 2
+
+[node name="Unit" type="TextureRect" parent="CellStage/CellStageUI/UnitQueue/UnitsInformation/QueuedUnits"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_pfkrv")
+stretch_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="CellStage/CellStageUI/UnitQueue/UnitsInformation"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
 [node name="HumanStage" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="HumanStage"]
 position = Vector2(583, 309)
 texture = ExtResource("1_lchni")
 
+[node name="HumanStageUI" type="Control" parent="HumanStage"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="UnitQueue" type="HBoxContainer" parent="HumanStage/HumanStageUI"]
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 0
+offset_top = 75.0
+offset_right = 284.0
+offset_bottom = 156.0
+
+[node name="NextUnit" type="PanelContainer" parent="HumanStage/HumanStageUI/UnitQueue"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="NextUnitIcon" type="TextureRect" parent="HumanStage/HumanStageUI/UnitQueue/NextUnit"]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture = ExtResource("4_pfkrv")
+stretch_mode = 4
+
+[node name="UnitsInformation" type="VBoxContainer" parent="HumanStage/HumanStageUI/UnitQueue"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+
+[node name="QueuedUnits" type="HBoxContainer" parent="HumanStage/HumanStageUI/UnitQueue/UnitsInformation"]
+layout_mode = 2
+
+[node name="Unit" type="TextureRect" parent="HumanStage/HumanStageUI/UnitQueue/UnitsInformation/QueuedUnits"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_pfkrv")
+stretch_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="HumanStage/HumanStageUI/UnitQueue/UnitsInformation"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
 [node name="SpaceStage" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpaceStage"]
 position = Vector2(716, 311)
 texture = ExtResource("1_lchni")
+
+[node name="SpaceStageUI" type="Control" parent="SpaceStage"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="UnitQueue" type="HBoxContainer" parent="SpaceStage/SpaceStageUI"]
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 0
+offset_top = 75.0
+offset_right = 284.0
+offset_bottom = 156.0
+
+[node name="NextUnit" type="PanelContainer" parent="SpaceStage/SpaceStageUI/UnitQueue"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="NextUnitIcon" type="TextureRect" parent="SpaceStage/SpaceStageUI/UnitQueue/NextUnit"]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture = ExtResource("4_pfkrv")
+stretch_mode = 4
+
+[node name="UnitsInformation" type="VBoxContainer" parent="SpaceStage/SpaceStageUI/UnitQueue"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+
+[node name="QueuedUnits" type="HBoxContainer" parent="SpaceStage/SpaceStageUI/UnitQueue/UnitsInformation"]
+layout_mode = 2
+
+[node name="Unit" type="TextureRect" parent="SpaceStage/SpaceStageUI/UnitQueue/UnitsInformation/QueuedUnits"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_pfkrv")
+stretch_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="SpaceStage/SpaceStageUI/UnitQueue/UnitsInformation"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="BaseUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="Currency" type="HBoxContainer" parent="BaseUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CurrencyIcon" type="TextureRect" parent="BaseUI/Currency"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("3_q6rq1")
+
+[node name="CurrencyLabel" type="Label" parent="BaseUI/Currency"]
+layout_mode = 2
+text = ": 1000"
+
+[node name="Stages" type="HBoxContainer" parent="BaseUI"]
+layout_mode = 0
+offset_left = 500.0
+offset_right = 688.0
+offset_bottom = 60.0
+
+[node name="CellButton" type="Button" parent="BaseUI/Stages"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="CellIcon" type="TextureRect" parent="BaseUI/Stages/CellButton"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_a4r81")
+stretch_mode = 4
+
+[node name="HumanButton" type="Button" parent="BaseUI/Stages"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="HumanIcon" type="TextureRect" parent="BaseUI/Stages/HumanButton"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_a4r81")
+
+[node name="PlanetButton" type="Button" parent="BaseUI/Stages"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="PlanetIcon" type="TextureRect" parent="BaseUI/Stages/PlanetButton"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_a4r81")
+
+[node name="MenuButton" type="Button" parent="BaseUI"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 1090.0
+offset_right = 1150.0
+offset_bottom = 60.0
+
+[node name="OptionsIcon" type="TextureRect" parent="BaseUI/MenuButton"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("3_q6rq1")
