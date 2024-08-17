@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qvr5qoxt6666"
-path="res://.godot/imported/enemy-cell.png-8315acc37dfb35cccc8e3db97ee88afb.ctex"
+uid="uid://dx2lxe4q1g2et"
+path="res://.godot/imported/MechIcon.png-b71496f17443a15416bb280c5339d328.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy-cell.png"
-dest_files=["res://.godot/imported/enemy-cell.png-8315acc37dfb35cccc8e3db97ee88afb.ctex"]
+source_file="res://sprites/MechIcon.png"
+dest_files=["res://.godot/imported/MechIcon.png-b71496f17443a15416bb280c5339d328.ctex"]
 
 [params]
 

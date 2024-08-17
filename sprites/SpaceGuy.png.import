@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qvr5qoxt6666"
-path="res://.godot/imported/enemy-cell.png-8315acc37dfb35cccc8e3db97ee88afb.ctex"
+uid="uid://dla2tnl4ds0it"
+path="res://.godot/imported/SpaceGuy.png-5b90dae504ae078728c5542a98135172.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy-cell.png"
-dest_files=["res://.godot/imported/enemy-cell.png-8315acc37dfb35cccc8e3db97ee88afb.ctex"]
+source_file="res://sprites/SpaceGuy.png"
+dest_files=["res://.godot/imported/SpaceGuy.png-5b90dae504ae078728c5542a98135172.ctex"]
 
 [params]
 
