@@ -12,16 +12,18 @@ space_stage = NodePath("SpaceStage")
 [node name="CellStage" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CellStage"]
-position = Vector2(451, 308)
+position = Vector2(583, 312)
 texture = ExtResource("1_lchni")
 
 [node name="HumanStage" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="HumanStage"]
-position = Vector2(583, 309)
+position = Vector2(450, 310)
 texture = ExtResource("1_lchni")
 
 [node name="SpaceStage" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="SpaceStage"]
 position = Vector2(716, 311)
