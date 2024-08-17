@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1cm5xhujn3au"]
+
+[ext_resource type="Texture2D" uid="uid://blyvp6xlq7ky6" path="res://sprites/player-cell.png" id="1_eer0s"]
+
+[node name="StageUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UnitQueue" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(240, 60)
+offset_top = 75.0
+offset_right = 284.0
+offset_bottom = 156.0
+
+[node name="NextUnit" type="PanelContainer" parent="UnitQueue"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="NextUnitIcon" type="TextureRect" parent="UnitQueue/NextUnit"]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+texture = ExtResource("1_eer0s")
+stretch_mode = 4
+
+[node name="UnitsInformation" type="VBoxContainer" parent="UnitQueue"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+
+[node name="QueuedUnits" type="HBoxContainer" parent="UnitQueue/UnitsInformation"]
+layout_mode = 2
+
+[node name="Unit" type="TextureRect" parent="UnitQueue/UnitsInformation/QueuedUnits"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_eer0s")
+stretch_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="UnitQueue/UnitsInformation"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
