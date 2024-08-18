@@ -1,33 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxhmg0w7ym4ds"]
+[gd_scene load_steps=2 format=3 uid="uid://bxhmg0w7ym4ds"]
 
 [ext_resource type="Script" path="res://scripts/unit.gd" id="1_355l0"]
-[ext_resource type="Texture2D" uid="uid://b3yxv5uffusly" path="res://icon.svg" id="2_uv6ki"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ptko"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_uv6ki")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj4wi"]
-size = Vector2(126, 128)
-
-[node name="Unit" type="CharacterBody2D"]
+[node name="Unit" type="RigidBody2D"]
 position = Vector2(642, 347)
 collision_mask = 0
+gravity_scale = 0.0
 script = ExtResource("1_355l0")
 metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_8ptko")
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_mj4wi")
-metadata/_edit_lock_ = true

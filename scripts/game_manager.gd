@@ -3,6 +3,8 @@ extends Node2D
 @export var cell_stage: Node2D
 @export var human_stage: Node2D
 @export var space_stage: Node2D
+@export var soldier_scene: PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,3 +38,8 @@ func go_down():
 		cell_stage.visible = true
 		human_stage.visible = false
 		space_stage.visible = false
+
+
+func _on_soldier_contact():
+	print("SOLDIERS CONTACTED")
+	pass # Replace with function body.
