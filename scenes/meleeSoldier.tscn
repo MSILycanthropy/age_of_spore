@@ -10,7 +10,14 @@
 [node name="soldier" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_v4tm6")
+export_hp = null
+export_attack_range = null
+export_attack_damage = null
+export_attack_speed = null
+unit_speed = null
+isEnemy = null
 unitSpeed = 200
+id = null
 
 [node name="SoldierSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_3da3k")

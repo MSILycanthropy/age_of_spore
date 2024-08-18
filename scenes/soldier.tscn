@@ -10,6 +10,8 @@
 [node name="soldier" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_fkrgx")
+unit_speed = 200
+unitSpeed = 100
 
 [node name="SoldierSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_4mb2l")

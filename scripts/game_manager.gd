@@ -43,3 +43,7 @@ func go_down():
 func _on_soldier_contact():
 	print("SOLDIERS CONTACTED")
 	pass # Replace with function body.
+
+
+func body_entered(body):
+	pass # Replace with function body.

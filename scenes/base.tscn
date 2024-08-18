@@ -23,16 +23,16 @@ texture = ExtResource("1_lchni")
 
 [node name="soldier" parent="CellStage" instance=ExtResource("3_wcsnk")]
 position = Vector2(300, 300)
-id = 1
+isEnemy = false
+unitSpeed = 50
 
 [node name="soldier2" parent="CellStage" instance=ExtResource("3_wcsnk")]
 position = Vector2(448, 300)
 isEnemy = true
-id = 2
 
 [node name="soldier3" parent="CellStage" instance=ExtResource("3_wcsnk")]
 position = Vector2(232, 300)
-id = 3
+isEnemy = false
 
 [node name="HumanStage" type="Node2D" parent="."]
 
@@ -60,5 +60,8 @@ position = Vector2(128, 320)
 [node name="EnemySpawnLocation" type="Marker2D" parent="."]
 position = Vector2(1024, 320)
 
+[connection signal="body_entered" from="CellStage/soldier" to="." method="body_entered"]
 [connection signal="contact" from="CellStage/soldier" to="." method="_on_soldier_contact"]
+[connection signal="body_entered" from="CellStage/soldier2" to="." method="body_entered"]
 [connection signal="contact" from="CellStage/soldier2" to="." method="_on_soldier_contact"]
+[connection signal="body_entered" from="CellStage/soldier3" to="." method="body_entered"]
