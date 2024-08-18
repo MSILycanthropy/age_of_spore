@@ -40,6 +40,24 @@ func go_down():
 		space_stage.visible = false
 
 
+func get_stage(stageName):
+	if stageName == "cell":
+		cell_stage.visible = true
+		human_stage.visible = false
+		space_stage.visible = false
+	elif stageName == "human":
+		cell_stage.visible = false
+		human_stage.visible = true
+		space_stage.visible = false
+	elif stageName == "planet":
+		cell_stage.visible = false
+		human_stage.visible = false
+		space_stage.visible = true
+
+
+func _on_base_ui_change_stage(stageName: Variant) -> void:
+	get_stage(stageName)
+
 func _on_soldier_contact():
 	print("SOLDIERS CONTACTED")
 	pass # Replace with function body.
