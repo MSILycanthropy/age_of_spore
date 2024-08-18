@@ -51,4 +51,3 @@ func area_entered(body):
 func start_attack():
 	pass
 	
-

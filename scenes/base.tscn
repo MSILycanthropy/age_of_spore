@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qu1b5c5cm0bl"]
+[gd_scene load_steps=6 format=3 uid="uid://qu1b5c5cm0bl"]
 
 [ext_resource type="Texture2D" uid="uid://b3yxv5uffusly" path="res://icon.svg" id="1_lchni"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_m85jm"]
-[ext_resource type="PackedScene" uid="uid://d1cm5xhujn3au" path="res://scenes/stageUi.tscn" id="3_mj5ff"]
+[ext_resource type="PackedScene" uid="uid://cqiyktylirss2" path="res://scenes/stageUi.tscn" id="3_mj5ff"]
+[ext_resource type="PackedScene" path="res://scenes/soldier.tscn" id="3_wcsnk"]
 [ext_resource type="PackedScene" uid="uid://b2ox8nbqsb536" path="res://scenes/baseUi.tscn" id="4_w0pqh"]
-[ext_resource type="PackedScene" uid="uid://igodleuf1hyi" path="res://scenes/soldier.tscn" id="3_wcsnk"]
-
 
 [node name="Base" type="Node2D" node_paths=PackedStringArray("cell_stage", "human_stage", "space_stage")]
 script = ExtResource("1_m85jm")
@@ -14,13 +13,18 @@ human_stage = NodePath("HumanStage")
 space_stage = NodePath("SpaceStage")
 soldier_scene = ExtResource("3_wcsnk")
 
+[node name="BaseUI" parent="." instance=ExtResource("4_w0pqh")]
+offset_left = -1.0
+offset_right = -1.0
+
 [node name="CellStage" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CellStage"]
 position = Vector2(451, 308)
 texture = ExtResource("1_lchni")
 
-[node name="StageUi" parent="CellStage" instance=ExtResource("3_mj5ff")]
+[node name="CellStageUI" parent="CellStage" instance=ExtResource("3_mj5ff")]
+
 [node name="soldier" parent="CellStage" instance=ExtResource("3_wcsnk")]
 position = Vector2(300, 300)
 id = 1
@@ -40,7 +44,7 @@ id = 3
 position = Vector2(583, 309)
 texture = ExtResource("1_lchni")
 
-[node name="StageUi" parent="HumanStage" instance=ExtResource("3_mj5ff")]
+[node name="HumanStageUI" parent="HumanStage" instance=ExtResource("3_mj5ff")]
 offset_left = -1.0
 offset_right = -1.0
 
@@ -50,14 +54,14 @@ offset_right = -1.0
 position = Vector2(716, 311)
 texture = ExtResource("1_lchni")
 
-[node name="SpaceStageUi" parent="SpaceStage" instance=ExtResource("3_mj5ff")]
+[node name="SpaceStageUI" parent="SpaceStage" instance=ExtResource("3_mj5ff")]
 
-[node name="BaseUi" parent="." instance=ExtResource("4_w0pqh")]
 [node name="PlayerSoldierSpawnLocation" type="Marker2D" parent="."]
 position = Vector2(128, 320)
 
 [node name="EnemySpawnLocation" type="Marker2D" parent="."]
 position = Vector2(1024, 320)
 
+[connection signal="change_stage" from="BaseUI" to="." method="_on_base_ui_change_stage"]
 [connection signal="contact" from="CellStage/soldier" to="." method="_on_soldier_contact"]
 [connection signal="contact" from="CellStage/soldier2" to="." method="_on_soldier_contact"]
