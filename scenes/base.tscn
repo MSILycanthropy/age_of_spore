@@ -1,19 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://qu1b5c5cm0bl"]
+[gd_scene load_steps=4 format=3 uid="uid://qu1b5c5cm0bl"]
 
 [ext_resource type="Texture2D" uid="uid://b3yxv5uffusly" path="res://icon.svg" id="1_lchni"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_m85jm"]
+[ext_resource type="PackedScene" uid="uid://igodleuf1hyi" path="res://scenes/soldier.tscn" id="3_wcsnk"]
 
 [node name="Base" type="Node2D" node_paths=PackedStringArray("cell_stage", "human_stage", "space_stage")]
 script = ExtResource("1_m85jm")
 cell_stage = NodePath("CellStage")
 human_stage = NodePath("HumanStage")
 space_stage = NodePath("SpaceStage")
+soldier_scene = ExtResource("3_wcsnk")
 
 [node name="CellStage" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CellStage"]
 position = Vector2(451, 308)
 texture = ExtResource("1_lchni")
+
+[node name="soldier" parent="CellStage" instance=ExtResource("3_wcsnk")]
+position = Vector2(300, 300)
+id = 1
+
+[node name="soldier2" parent="CellStage" instance=ExtResource("3_wcsnk")]
+position = Vector2(448, 300)
+isEnemy = true
+id = 2
+
+[node name="soldier3" parent="CellStage" instance=ExtResource("3_wcsnk")]
+position = Vector2(232, 300)
+id = 3
 
 [node name="HumanStage" type="Node2D" parent="."]
 
@@ -26,3 +41,12 @@ texture = ExtResource("1_lchni")
 [node name="Sprite2D" type="Sprite2D" parent="SpaceStage"]
 position = Vector2(716, 311)
 texture = ExtResource("1_lchni")
+
+[node name="PlayerSoldierSpawnLocation" type="Marker2D" parent="."]
+position = Vector2(128, 320)
+
+[node name="EnemySpawnLocation" type="Marker2D" parent="."]
+position = Vector2(1024, 320)
+
+[connection signal="contact" from="CellStage/soldier" to="." method="_on_soldier_contact"]
+[connection signal="contact" from="CellStage/soldier2" to="." method="_on_soldier_contact"]
