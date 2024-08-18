@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qu1b5c5cm0bl"]
+[gd_scene load_steps=6 format=3 uid="uid://qu1b5c5cm0bl"]
 
 [ext_resource type="Texture2D" uid="uid://b3yxv5uffusly" path="res://icon.svg" id="1_lchni"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_m85jm"]
 [ext_resource type="PackedScene" uid="uid://d1cm5xhujn3au" path="res://scenes/stageUi.tscn" id="3_mj5ff"]
+[ext_resource type="PackedScene" uid="uid://by3jwsyihvd20" path="res://scenes/meleeSoldier.tscn" id="3_wcsnk"]
 [ext_resource type="PackedScene" uid="uid://b2ox8nbqsb536" path="res://scenes/baseUi.tscn" id="4_w0pqh"]
-[ext_resource type="PackedScene" uid="uid://igodleuf1hyi" path="res://scenes/soldier.tscn" id="3_wcsnk"]
-
 
 [node name="Base" type="Node2D" node_paths=PackedStringArray("cell_stage", "human_stage", "space_stage")]
 script = ExtResource("1_m85jm")
@@ -21,6 +20,7 @@ position = Vector2(451, 308)
 texture = ExtResource("1_lchni")
 
 [node name="StageUi" parent="CellStage" instance=ExtResource("3_mj5ff")]
+
 [node name="soldier" parent="CellStage" instance=ExtResource("3_wcsnk")]
 position = Vector2(300, 300)
 id = 1
@@ -53,6 +53,7 @@ texture = ExtResource("1_lchni")
 [node name="SpaceStageUi" parent="SpaceStage" instance=ExtResource("3_mj5ff")]
 
 [node name="BaseUi" parent="." instance=ExtResource("4_w0pqh")]
+
 [node name="PlayerSoldierSpawnLocation" type="Marker2D" parent="."]
 position = Vector2(128, 320)
 

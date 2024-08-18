@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1cm5xhujn3au"]
 
-[ext_resource type="Texture2D" uid="uid://blyvp6xlq7ky6" path="res://sprites/player-cell.png" id="1_eer0s"]
+[ext_resource type="Texture2D" uid="uid://dc66w8i2imchm" path="res://sprites/player-cell.png" id="1_eer0s"]
 
 [node name="StageUi" type="Control"]
 layout_mode = 3
@@ -14,6 +14,7 @@ grow_vertical = 2
 
 [node name="UnitQueue" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(240, 60)
+layout_mode = 0
 offset_top = 75.0
 offset_right = 284.0
 offset_bottom = 156.0
