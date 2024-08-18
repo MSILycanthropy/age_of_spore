@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://igodleuf1hyi"]
 
 [ext_resource type="Script" path="res://scripts/soldier.gd" id="1_fkrgx"]
-[ext_resource type="Texture2D" uid="uid://cftopn43xwk0j" path="res://sprites/enemy-cell.png" id="2_4mb2l"]
+[ext_resource type="Texture2D" uid="uid://qvr5qoxt6666" path="res://sprites/enemy-cell.png" id="2_4mb2l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_erfhh"]
 
