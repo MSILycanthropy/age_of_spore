@@ -25,14 +25,16 @@ func _ready():
 	set_axis_velocity(Vector2(20, 0) * direction)	
 
 func attack_enemy(body):
-	body.hp -= self.attack.attack_damage  # Access the member variable here
+	print(body.hp)
+	if (isEnemy != body.isEnemy):
+		body.hp -= self.attack.attack_damage  # Access the member variable here
+	print(body.hp)
 
 func area_entered(body):
 	set_linear_velocity(Vector2(0,0))
 	print("Collided")
-	#print(id)
 	contact.emit()
-	attack_enemy(body)
+	attack_enemy(body.get_parent())
 
 func die():
 	hide()  # Disappears after dying
