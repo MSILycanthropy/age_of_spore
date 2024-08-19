@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2ox8nbqsb536"]
+[gd_scene load_steps=5 format=3 uid="uid://b2ox8nbqsb536"]
 
 [ext_resource type="Texture2D" uid="uid://m6m0isvmhuou" path="res://sprites/currency.png" id="1_6dkuk"]
 [ext_resource type="Script" path="res://scripts/base_ui.gd" id="1_xw4yv"]
 [ext_resource type="Texture2D" uid="uid://clung6a0d8m54" path="res://sprites/cell-stage-icon.png" id="2_rmm68"]
+
+[sub_resource type="GDScript" id="GDScript_evdd3"]
+script/source = "extends HBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass"
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -19,6 +32,7 @@ script = ExtResource("1_xw4yv")
 layout_mode = 0
 offset_right = 110.0
 offset_bottom = 60.0
+script = SubResource("GDScript_evdd3")
 
 [node name="CurrencyIcon" type="TextureRect" parent="Currency"]
 custom_minimum_size = Vector2(60, 60)
@@ -27,7 +41,7 @@ texture = ExtResource("1_6dkuk")
 
 [node name="CurrencyLabel" type="Label" parent="Currency"]
 layout_mode = 2
-text = ": 1000"
+text = "0"
 
 [node name="Stages" type="HBoxContainer" parent="."]
 layout_mode = 0
