@@ -3,7 +3,10 @@ extends Control
 @export var CellButton: Button
 @export var HumanButton: Button
 
+var currency = 0
+
 signal change_stage(stageName)
+
 
 func _on_cell_button_pressed() -> void:
 	emit_signal("change_stage", "cell")

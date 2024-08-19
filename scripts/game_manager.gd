@@ -4,6 +4,10 @@ extends Node2D
 @export var human_stage: Node2D
 @export var space_stage: Node2D
 @export var soldier_scene: PackedScene
+@export var base_ui: Control
+var currency = 0
+
+var game_timer = Timer.new()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,12 +15,20 @@ func _ready() -> void:
 	cell_stage.visible = true
 	human_stage.visible = false
 	space_stage.visible = false
+	$Timer.start()
+
+
+func _on_timer_timeout() -> void:
+	currency+=1
+	var currency_label = get_tree().root.get_node("Base/BaseUI/Currency/CurrencyLabel")
+	currency_label.text = str(currency)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("zoom_in"):
 		go_up()
 	elif event.is_action_pressed("zoom_out"):
 		go_down()
+
 
 func go_up():
 	if cell_stage.visible:
