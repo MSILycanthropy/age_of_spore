@@ -87,3 +87,4 @@ texture = ExtResource("1_6dkuk")
 [connection signal="pressed" from="Stages/CellButton" to="." method="_on_cell_button_pressed"]
 [connection signal="pressed" from="Stages/HumanButton" to="." method="_on_human_button_pressed"]
 [connection signal="pressed" from="Stages/PlanetButton" to="." method="_on_planet_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

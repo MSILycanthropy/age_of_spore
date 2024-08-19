@@ -15,3 +15,8 @@ func _on_human_button_pressed() -> void:
 
 func _on_planet_button_pressed() -> void:
 	emit_signal("change_stage", "planet")
+
+
+
+func _on_menu_button_pressed() -> void:
+	SignalBus.emit_signal("spawn_guy")
